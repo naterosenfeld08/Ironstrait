@@ -5,16 +5,14 @@ cursor:
 
 # Prototype v0 — Mercenary sandbox plan / status
 
-**Date:** 2026-11-20 (playtest polish pass)  
+**Date:** 2026-11-20 (playtest sync)  
 **Design source:** `docs/class-shooter-design-reference.md` (v0.24)  
 **GitHub:** https://github.com/naterosenfeld08/Ironstrait (**public**)  
-**PR #1:** merged (`cursor/mercenary-sandbox-v0-50c1` → `main`)  
-**Polish PR:** `cursor/mercenary-sandbox-polish-3150` → `main`  
-**Local code:** `/workspace` · branch `cursor/mercenary-sandbox-polish-3150`
+**PR #1:** merged · **PR #2 (polish):** merged · **Playtest sync:** `cursor/playtest-sync-bd19` → `main`
 
 ## Verdict
 
-Offline Mercenary graybox sandbox is on **main** (Unity **6000.3.29f1** / URP **17.3.0**). Nate playtested; polish pass fixes recoil isolation, box-collision bhop speed exploit, console close (` / Esc), composed low-poly viewmodels, and procedural placeholder SFX. **Networking still deferred.**
+Offline Mercenary graybox sandbox is on **main** (Unity **6000.3.29f1** / URP **17.3.0**), including polish (recoil isolation, bhop clamp, console Esc, viewmodels, SFX). **Playtest sync:** agents merge to `main` via automerge for `cursor/**` (or `automerge` label); Nate double-clicks `scripts/pull-main.command` (Unity closed preferred) then Play. **Networking still deferred.**
 
 ## Locked decisions (unchanged)
 
@@ -44,6 +42,9 @@ Offline Mercenary graybox sandbox is on **main** (Unity **6000.3.29f1** / URP **
 | Dev console close with Backquote **or Esc** | Done (polish) |
 | Health / dummies / score HUD / empty level 2 | Done |
 | Graybox arena | Done |
+| Mac pull script (`scripts/pull-main.sh` / `.command`) | Done |
+| README Playtest loop | Done |
+| Automerge workflow (`cursor/**` / `automerge` → main) | Done |
 
 ## Stubbed / deferred
 
@@ -61,9 +62,15 @@ Offline Mercenary graybox sandbox is on **main** (Unity **6000.3.29f1** / URP **
 3. **Console:** \` opens; \` or Esc closes (Esc must not also pause). Esc with console closed still pauses.
 4. **Assets:** Viewmodels look like guns (composed primitives). Fire/reload/hit/jump make placeholder sounds.
 
+## Playtest (Nate)
+
+1. Close Unity (preferred).
+2. Double-click `scripts/pull-main.command` (or `./scripts/pull-main.sh`).
+3. Open project → Play → Play Sandbox.
+
 ## Next
 
-1. Nate confirms polish on Mac after Hub install.
+1. Nate confirms polish on Mac after Hub install + pull script.
 2. Tune move / air accel / pellet spread from feel.
 3. Flesh slide/leap; melee stub.
 4. Netcode only after offline gunfeel passes.
