@@ -101,13 +101,15 @@ namespace Ironstrait.Boot
 
         void Update()
         {
-            if (_console != null && _console.IsOpen)
-            {
-                return;
-            }
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                // Same Esc must close console without also opening pause.
+                if (_console != null && _console.IsOpen)
+                {
+                    _console.Close();
+                    return;
+                }
+
                 var pause = Time.timeScale > 0.01f;
                 Time.timeScale = pause ? 0f : 1f;
                 _controller?.SetInputEnabled(!pause);

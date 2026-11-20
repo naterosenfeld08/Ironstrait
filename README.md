@@ -47,19 +47,23 @@ Unity Hub + 6.3 LTS are **not** installed on Nate’s machine yet. Do this local
 | Leap (stub) | Q |
 | Shotgun | LMB |
 | Grenade launcher | RMB |
-| Console | \` |
-| Pause / menu | Esc |
+| Console open / close | \` (Backquote) |
+| Console close | Esc (closes console only; does not pause) |
+| Pause / menu | Esc (when console is closed) |
 
-Console: `help`, `kill`, `respawn`, `reset`, `set health 150`, `set level 8`, `target clear`, `target spawn`.
+Console: `help`, `kill`, `respawn`, `reset`, `set health 150`, `set level 8`, `target clear`, `target spawn`.  
+Developer console toggles closed with **Backquote** or **Esc**.
 
 Settings JSON (after first save): `Application.persistentDataPath` / `user_settings_v1.json`.  
 Balance numbers: `Assets/Resources/Config/mercenary_baseline.json`.
 
 ## Playable now vs stubbed
 
-**Playable:** menu, settings persistence, FPS move + air strafe, dual-weapon fire, auto reload, dummy targets + score/level HUD, health packs, basic console, graybox arena.
+**Playable:** menu, settings persistence, FPS move + air strafe (collision speed exploit clamped), dual-weapon fire with isolated viewmodel recoil, auto reload, dummy targets + score/level HUD, health packs, basic console (close with \` / Esc), graybox arena, low-poly viewmodels, placeholder SFX.
 
-**Stubbed / deferred:** wallclimb, full slide/leap feel, melee, audio, polish VFX, most upgrade gameplay beyond wired multipliers, **networking**, other classes, modes.
+**Stubbed / deferred:** wallclimb, full slide/leap feel, melee, polish VFX, most upgrade gameplay beyond wired multipliers, **networking**, other classes, modes.
+
+**Audio / viewmodels (v0 polish):** composed low-poly primitive shotgun + grenade launcher (not cubes); procedural placeholder SFX for fire / reload / hit / jump (no external pack — original generated clips, no attribution required).
 
 ## Package pins
 

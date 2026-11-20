@@ -38,7 +38,8 @@
     "gravity": -12,
     "lifetimeSeconds": 10,
     "selfDamageEqualsSplash": true,
-    "collisionRadius": 0.18
+    "collisionRadius": 0.18,
+    "visualRecoilDegrees": 3.5
   },
   "score": {
     "damagePerPoint": 100,
