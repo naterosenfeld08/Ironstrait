@@ -35,6 +35,17 @@ Unity Hub + 6.3 LTS are **not** installed on Nate’s machine yet. Do this local
    - `Edit → Project Settings → Quality` → assign on the active quality level
 6. Open `Assets/Scenes/BootMenu.unity` → **Play** → **Play Sandbox**.
 
+## Playtest loop
+
+Agents land changes on **`main`** (PRs from `cursor/**` auto-merge when mergeable / checks green; see `.github/workflows/automerge-cursor.yml`). Nate pulls and plays:
+
+1. **Prefer closing Unity** (avoids half-reloaded scripts/assets).
+2. **Sync `main`:** double-click `scripts/pull-main.command` in Finder, **or** run `./scripts/pull-main.sh` from the repo root in Terminal.
+3. Confirm the script prints **SUCCESS**.
+4. Open the project in Unity Hub (or return to the already-open project) → open `Assets/Scenes/BootMenu.unity` if needed → **Play** → **Play Sandbox**.
+
+If the pull fails (local edits on `main`, conflicts), fix or stash those changes and run the script again.
+
 ### Controls (sandbox)
 
 | Action | Default |
