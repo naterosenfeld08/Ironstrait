@@ -8,11 +8,12 @@ cursor:
 **Date:** 2026-11-20 (updated with Nate’s clarifying answers)  
 **Design source:** `docs/class-shooter-design-reference.md` (v0.24)  
 **GitHub:** https://github.com/naterosenfeld08/Ironstrait (**public**)  
+**PR:** https://github.com/naterosenfeld08/Ironstrait/pull/1 (`cursor/mercenary-sandbox-v0-50c1` → `main`)  
 **Local code:** `/agent/ironstrait` · branch `cursor/mercenary-sandbox-v0-50c1`
 
 ## Verdict
 
-Offline Mercenary graybox sandbox is scaffolded as Unity **6000.3.29f1** / URP **17.3.0** with runtime-built arena, dual weapons, HUD, menu/settings, and score placeholders. Editor play-mode validation depends on Unity install (Mac for Nate; cloud VM attempt in progress). Push/PR depends on GitHub write auth on this scratch agent.
+Offline Mercenary graybox sandbox is scaffolded as Unity **6000.3.29f1** / URP **17.3.0** with runtime-built arena, dual weapons, HUD, menu/settings, and score placeholders. **Pushed** to public GitHub; PR open. Cloud VM installed Unity Editor **6000.3.29f1** via Unity CLI (`~/Unity/Hub/Editor/6000.3.29f1`); Nate still needs Hub + 6.3 LTS on his Mac for playtesting.
 
 ## Locked decisions (2026-11-20)
 
@@ -68,13 +69,22 @@ Offline Mercenary graybox sandbox is scaffolded as Unity **6000.3.29f1** / URP *
 - **Nate’s Mac:** model / chip / RAM / macOS version **unknown** (not provided). Profile separately once known.
 - **This cloud VM:** Linux `x86_64`, Ubuntu 24.04 — not a Mac substitute for Apple Silicon / macOS packaging checks.
 
+## Unity install outcome (cloud VM)
+
+| Item | Result |
+| --- | --- |
+| Unity CLI | Installed 1.0.1 (`~/.local/bin/unity`) |
+| Editor 6000.3.29f1 (linux-x64) | **Installed** → `/home/ubuntu/Unity/Hub/Editor/6000.3.29f1` |
+| Unity account / license on VM | Signed out / unknown — batch Play may be limited without `unity auth login` |
+| Nate’s Mac Hub + 6.3 | **Still required** (not installed on his machine) |
+
 ## Open technical risks
 
-1. Scratch-agent git push needs GitHub write credentials (device login or `GH_TOKEN` / ConnectScm-linked run).
-2. First Editor open may re-serialize hand-authored scenes/metas; pink materials until URP assigned.
-3. Gunfeel unverified until Editor Play on Nate’s Mac (or successful VM Editor install).
-4. Same-frame dual lethal + grenade self-damage jump impulse need playtest.
-5. Input System package listed; v0 still uses legacy `Input.*`.
+1. First Editor open may re-serialize hand-authored scenes/metas; pink materials until URP assigned.
+2. Gunfeel unverified until Editor Play on Nate’s Mac.
+3. Same-frame dual lethal + grenade self-damage jump impulse need playtest.
+4. Input System package listed; v0 still uses legacy `Input.*`.
+5. Cloud VM Unity license unsigned — headless validate may not fully prove Play Mode.
 
 ## Next iteration priorities
 
