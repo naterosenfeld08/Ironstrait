@@ -30,6 +30,7 @@ namespace Ironstrait.Config
         public float lifetimeSeconds = 10f;
         public bool selfDamageEqualsSplash = true;
         public float collisionRadius = 0.18f;
+        public float visualRecoilDegrees = 3.5f;
     }
 
     [Serializable]

@@ -31,28 +31,37 @@ namespace Ironstrait.DebugTools
             _spawn = spawn;
         }
 
-        void Update()
+        public void Close()
         {
-            if (Input.GetKeyDown(KeyCode.BackQuote))
-            {
-                _open = !_open;
-                if (_controller != null)
-                {
-                    _controller.SetInputEnabled(!_open);
-                }
-
-                if (_weapons != null)
-                {
-                    _weapons.InputEnabled = !_open;
-                }
-            }
-
             if (!_open)
             {
                 return;
             }
 
-            // Prevent gameplay mouse look while typing — already disabled via SetInputEnabled
+            SetOpen(false);
+        }
+
+        void Update()
+        {
+            // Esc close is handled by SandboxBootstrap so the same keypress cannot also pause.
+            if (Input.GetKeyDown(KeyCode.BackQuote))
+            {
+                SetOpen(!_open);
+            }
+        }
+
+        void SetOpen(bool open)
+        {
+            _open = open;
+            if (_controller != null)
+            {
+                _controller.SetInputEnabled(!_open);
+            }
+
+            if (_weapons != null)
+            {
+                _weapons.InputEnabled = !_open;
+            }
         }
 
         void OnGUI()
@@ -62,7 +71,7 @@ namespace Ironstrait.DebugTools
                 return;
             }
 
-            GUI.Box(new Rect(20, 80, Screen.width - 40, 140), "Developer Console");
+            GUI.Box(new Rect(20, 80, Screen.width - 40, 140), "Developer Console  (` or Esc to close)");
             GUI.Label(new Rect(30, 110, Screen.width - 60, 40), _log);
             GUI.SetNextControlName("ConsoleInput");
             _input = GUI.TextField(new Rect(30, 160, Screen.width - 200, 28), _input);
