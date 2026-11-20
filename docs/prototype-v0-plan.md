@@ -75,7 +75,7 @@ Offline Mercenary graybox sandbox is scaffolded as Unity **6000.3.29f1** / URP *
 | --- | --- |
 | Unity CLI | Installed 1.0.1 (`~/.local/bin/unity`) |
 | Editor 6000.3.29f1 (linux-x64) | **Installed** → `/home/ubuntu/Unity/Hub/Editor/6000.3.29f1` |
-| Unity account / license on VM | Signed out / unknown — batch Play may be limited without `unity auth login` |
+| Unity account / license on VM | Signed out — batchmode open exited **198** (`No valid Unity Editor license found`) |
 | Nate’s Mac Hub + 6.3 | **Still required** (not installed on his machine) |
 
 ## Open technical risks
