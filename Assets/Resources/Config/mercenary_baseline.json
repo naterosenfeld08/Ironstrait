@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "classId": "mercenary",
+  "maxHealth": 150,
+  "regenPerSecond": 10,
+  "regenDelaySeconds": 10,
+  "moveSpeed": 8.5,
+  "crouchSpeedMultiplier": 0.5,
+  "jumpSpeed": 7.5,
+  "gravity": -22,
+  "groundAcceleration": 80,
+  "airAcceleration": 28,
+  "groundFriction": 14,
+  "airStrafeControl": 1,
+  "mouseSensitivity": 0.12,
+  "defaultFov": 90,
+  "slideLeapDistance": 6,
+  "slideLeapChargeDelay": 3,
+  "slideLeapRefillSeconds": 3,
+  "shotgun": {
+    "magazineSize": 6,
+    "pelletCount": 5,
+    "pelletDamage": 15,
+    "fireInterval": 0.65,
+    "reloadEmptySeconds": 3.5,
+    "spreadHalfAngleDegrees": 2.2,
+    "maxRange": 80,
+    "visualRecoilDegrees": 4
+  },
+  "grenadeLauncher": {
+    "magazineSize": 3,
+    "directDamage": 50,
+    "splashDamage": 15,
+    "splashRadius": 2.25,
+    "fireInterval": 0.75,
+    "reloadEmptySeconds": 4,
+    "projectileSpeed": 28,
+    "gravity": -12,
+    "lifetimeSeconds": 10,
+    "selfDamageEqualsSplash": true,
+    "collisionRadius": 0.18
+  },
+  "score": {
+    "damagePerPoint": 100,
+    "levelThresholds": [0, 2, 4, 7, 10, 14, 18, 22, 26, 30]
+  }
+}

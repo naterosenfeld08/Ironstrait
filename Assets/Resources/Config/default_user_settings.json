@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "mouseSensitivity": 0.12,
+  "fov": 90,
+  "invertY": false,
+  "masterVolume": 0.8,
+  "showDamageNumbers": true,
+  "windowedWidth": 1920,
+  "windowedHeight": 1080,
+  "fullscreen": false,
+  "keybinds": {
+    "moveForward": "W",
+    "moveBack": "S",
+    "moveLeft": "A",
+    "moveRight": "D",
+    "jump": "Space",
+    "crouch": "LeftControl",
+    "slide": "LeftCommand",
+    "firePrimary": "Mouse0",
+    "fireSecondary": "Mouse1",
+    "melee": "V",
+    "scoreboard": "Tab",
+    "console": "BackQuote",
+    "pause": "Escape"
+  }
+}
