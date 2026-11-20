@@ -2,29 +2,38 @@
 
 Offline Mercenary sandbox prototype for Nate’s personal class shooter.
 
+**Repo:** https://github.com/naterosenfeld08/Ironstrait (**public**)  
 **Engine (pinned):** Unity **6000.3.29f1** (Unity 6.3 LTS) · C# · URP `com.unity.render-pipelines.universal` **17.3.0** · Input System package present (legacy `Input` API used in v0) · uGUI **2.0.0**
 
-Working title undecided; repo/folder name is provisional.
+Working title undecided; repository name is `Ironstrait`.
 
 ## What this is
 
-A Cursor-scaffolded Unity project that opens on macOS/Windows once Unity Hub has **6.3 LTS (6000.3.29f1)** installed. The cloud VM that authored this pass does **not** run the Unity Editor — gameplay is implemented in C# with runtime graybox construction so you can press Play after package resolve.
+A Cursor-scaffolded Unity project. Install Unity Hub **6.3 LTS (6000.3.29f1)** on your Mac, open this repo, and press Play. Gameplay is C# with a runtime-built graybox arena so scenes need minimal hand wiring.
 
-Design source (copied into repo): `docs/Class_Shooter_Design_Reference.md` (Version 0.24).
+Design source (in repo): `docs/Class_Shooter_Design_Reference.md` (Version 0.24).  
+Status / plan: `docs/prototype-v0-plan.md`.
 
-## Open / run (Mac)
+## Locked prototype decisions
+
+- **Networking:** fully deferred until offline gunfeel passes.
+- **Reload:** full-empty totals — shotgun **3.5s** for 6 shells, grenade launcher **4s** for 3 rounds (per-shell/round auto reload derived from those totals).
+- **Level 2 Mercenary upgrade:** left **empty** (not every level needs an upgrade).
+- **Hardware notes:** Nate’s Mac model / chip / RAM / macOS version are **unknown** — profile later; do not treat this Linux cloud VM as a Mac substitute.
+
+## Open / run (Mac) — required for Nate
+
+Unity Hub + 6.3 LTS are **not** installed on Nate’s machine yet. Do this locally:
 
 1. Install [Unity Hub](https://unity.com/download).
-2. Install editor **Unity 6.3 LTS → 6000.3.29f1** (Modules: Mac Build Support if you will build standalone; Windows optional later).
-3. Hub → **Open** → select this repository folder (`ironstrait`).
+2. Install editor **Unity 6.3 LTS → 6000.3.29f1** (add **Mac Build Support** if you will build standalone).
+3. `git clone https://github.com/naterosenfeld08/Ironstrait.git` then Hub → **Open** that folder.
 4. Wait for Package Manager to restore URP / Input System / uGUI.
-5. **First-open URP wiring (required once):**
-   - `Assets → Create → Rendering → URP Asset (with Universal Renderer)`
-   - Save under `Assets/Settings/` (e.g. `URP-HighFidelity`).
-   - `Edit → Project Settings → Graphics` → set **Scriptable Render Pipeline Settings** to that asset.
-   - `Edit → Project Settings → Quality` → assign the same (or quality-specific) URP asset on the active quality level.
-6. Open `Assets/Scenes/BootMenu.unity` and press **Play**.
-7. Menu: **Play Sandbox** → graybox arena with Mercenary controls.
+5. **First-open URP wiring** (auto helper may do this; otherwise once by hand):
+   - `Assets → Create → Rendering → URP Asset (with Universal Renderer)` → save under `Assets/Settings/`
+   - `Edit → Project Settings → Graphics` → assign that URP asset
+   - `Edit → Project Settings → Quality` → assign on the active quality level
+6. Open `Assets/Scenes/BootMenu.unity` → **Play** → **Play Sandbox**.
 
 ### Controls (sandbox)
 
@@ -43,17 +52,14 @@ Design source (copied into repo): `docs/Class_Shooter_Design_Reference.md` (Vers
 
 Console: `help`, `kill`, `respawn`, `reset`, `set health 150`, `set level 8`, `target clear`, `target spawn`.
 
-Settings JSON path (after first save): `Application.persistentDataPath` / `user_settings_v1.json`.
-
+Settings JSON (after first save): `Application.persistentDataPath` / `user_settings_v1.json`.  
 Balance numbers: `Assets/Resources/Config/mercenary_baseline.json`.
 
 ## Playable now vs stubbed
 
-See Project store plan: will also live at `docs/` in the Ironstrait Project Context as `prototype-v0-plan.md`.
-
 **Playable:** menu, settings persistence, FPS move + air strafe, dual-weapon fire, auto reload, dummy targets + score/level HUD, health packs, basic console, graybox arena.
 
-**Stubbed / minimal:** wallclimb, full slide/leap feel, melee, audio, polish VFX, most level-upgrade *gameplay* application beyond multipliers already wired for grenade/shotgun, networking, other classes, modes.
+**Stubbed / deferred:** wallclimb, full slide/leap feel, melee, audio, polish VFX, most upgrade gameplay beyond wired multipliers, **networking**, other classes, modes.
 
 ## Package pins
 
@@ -64,7 +70,7 @@ See Project store plan: will also live at `docs/` in the Ironstrait Project Cont
 | Input System | 1.14.2 |
 | uGUI | 2.0.0 |
 
-Exact Hub patch may float within 6000.3.x; if Hub offers a newer **6000.3.*** LTS patch, prefer matching `ProjectSettings/ProjectVersion.txt` or allow Hub to upgrade the patch and re-pin in git after a clean open.
+Exact Hub patch may float within 6000.3.x; prefer matching `ProjectSettings/ProjectVersion.txt` or re-pin after a clean open.
 
 ## License / intent
 
